@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>File Nilai Pak Rana</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#020617;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* BACKGROUND */
+    body::before{
+      content:'';
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:
+      radial-gradient(circle at top left,#2563eb33,transparent 30%),
+      radial-gradient(circle at bottom right,#06b6d433,transparent 30%);
+      z-index:-2;
+    }
+
+    /* BUBBLE */
+    .bubble{
+      position:fixed;
+      bottom:-120px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.06);
+      animation:float 20s infinite linear;
+      z-index:-1;
+    }
+
+    .bubble:nth-child(1){
+      width:80px;
+      height:80px;
+      left:10%;
+    }
+
+    .bubble:nth-child(2){
+      width:120px;
+      height:120px;
+      left:40%;
+      animation-duration:25s;
+    }
+
+    .bubble:nth-child(3){
+      width:60px;
+      height:60px;
+      left:75%;
+      animation-duration:15s;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0) rotate(0deg);
+      }
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    /* HERO */
+    .hero{
+      text-align:center;
+      padding:80px 20px 50px;
+    }
+
+    .hero h1{
+      font-size:60px;
+      font-weight:700;
+      background:linear-gradient(to right,#38bdf8,#2563eb);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      color:#cbd5e1;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    /* CONTAINER */
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding-bottom:80px;
+    }
+
+    /* OWNER CARD */
+    .owner-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+      border-radius:30px;
+      padding:40px;
+      text-align:center;
+      margin-bottom:50px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .owner-card::before{
+      content:'OWNER';
+      position:absolute;
+      top:-20px;
+      right:-10px;
+      font-size:120px;
+      font-weight:700;
+      color:rgba(255,255,255,0.03);
+    }
+
+    .avatar{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      overflow:hidden;
+      margin:auto;
+      border:5px solid rgba(255,255,255,0.15);
+      margin-bottom:20px;
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:10px 25px;
+      border-radius:30px;
+      background:linear-gradient(to right,#38bdf8,#2563eb);
+      font-weight:600;
+      margin-bottom:15px;
+    }
+
+    .owner-card h2{
+      font-size:35px;
+      margin-bottom:10px;
+    }
+
+    .desc{
+      color:#cbd5e1;
+      line-height:1.8;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* SCORE */
+    .score-box{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin-top:30px;
+      flex-wrap:wrap;
+    }
+
+    .score{
+      background:rgba(255,255,255,0.06);
+      padding:20px 35px;
+      border-radius:20px;
+      min-width:180px;
+    }
+
+    .score h3{
+      font-size:40px;
+      color:#38bdf8;
+    }
+
+    .score p{
+      color:#cbd5e1;
+      margin-top:5px;
+    }
+
+    /* COLLAB */
+    .team{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      padding:35px;
+      text-align:center;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .card h2{
+      margin-top:15px;
+      margin-bottom:10px;
+      font-size:25px;
+    }
+
+    .role{
+      display:inline-block;
+      background:#7c3aed;
+      padding:8px 20px;
+      border-radius:20px;
+      font-size:14px;
+      margin-top:10px;
+      margin-bottom:15px;
+    }
+
+    .nilai{
+      margin-top:25px;
+      background:rgba(255,255,255,0.04);
+      border-radius:15px;
+      padding:15px;
+    }
+
+    .nilai h1{
+      color:#22c55e;
+      font-size:45px;
+    }
+
+    .akurasi{
+      margin-top:10px;
+      height:10px;
+      width:100%;
+      background:#1e293b;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .akurasi span{
+      display:block;
+      height:100%;
+      border-radius:20px;
+      background:linear-gradient(to right,#22c55e,#38bdf8);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- BUBBLE -->
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>📚 File Nilai Pak Rana</h1>
+
+    <p>
+      Landing page modern untuk menampilkan owner,
+      kolaborator, nilai project, dan tingkat akurasi hasil kerja.
+    </p>
+  </section>
+
+  <div class="container">
+
+    <!-- OWNER -->
+    <div class="owner-card">
+
+      <div class="avatar">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+      </div>
+
+      <div class="badge">👑 OWNER PROJECT</div>
+
+      <h2>Kevin Firdaus Putra Pratama</h2>
+
+      <p class="desc">
+        Sebagai owner project, bertanggung jawab dalam desain,
+        pengembangan website, pengelolaan repository,
+        dan penyusunan landing page File Nilai Pak Rana.
+      </p>
+
+      <div class="score-box">
+
+        <div class="score">
+          <h3>98</h3>
+          <p>Nilai Project</p>
+        </div>
+
+        <div class="score">
+          <h3>99%</h3>
+          <p>Akurasi</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TEAM -->
+    <div class="team">
+
+      <!-- COLLAB 1 -->
+      <div class="card">
+
+        <div class="avatar">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+        </div>
+
+        <div class="role">KOLABORATOR 1</div>
+
+        <h2>Athaillah Rizki Syandana</h2>
+
+        <p>
+          Membantu pengembangan project,
+          desain tampilan, dan dokumentasi tugas.
+        </p>
+
+        <div class="nilai">
+          <h1>95</h1>
+          <p>Nilai</p>
+
+          <div class="akurasi">
+            <span style="width:95%"></span>
+          </div>
+
+          <small>95% Akurasi</small>
+        </div>
+
+      </div>
+
+      <!-- COLLAB 2 -->
+      <div class="card">
+
+        <div class="avatar">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+        </div>
+
+        <div class="role">KOLABORATOR 2</div>
+
+        <h2>Nama Kolaborator</h2>
+
+        <p>
+          Berkontribusi dalam testing website
+          dan memastikan fitur berjalan dengan baik.
+        </p>
+
+        <div class="nilai">
+          <h1>92</h1>
+          <p>Nilai</p>
+
+          <div class="akurasi">
+            <span style="width:92%"></span>
+          </div>
+
+          <small>92% Akurasi</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 File Nilai Pak Rana • Designed By Kevin Firdaus
+  </footer>
+
+</body>
+</html>
