@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Biodata</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-card.owner {
+            grid-column: 1 / -1;
+            max-width: 400px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .team-card.owner .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+        }
+
+        .team-card.owner .avatar {
+            background: #ffd700;
+            color: #333;
+        }
+
+        .team-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .team-card.owner h2 {
+            color: white;
+        }
+
+        .role {
+            color: #764ba2;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-card.owner .role {
+            color: #ffd700;
+        }
+
+        .bio {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .team-card.owner .bio {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .team-card.owner .social a {
+            background: #ffd700;
+            color: #333;
+        }
+
+        .social a:hover {
+            background: #764ba2;
+        }
+
+        .team-card.owner .social a:hover {
+            background: #ffed4e;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .team-grid {
+                gap: 20px;
+            }
+
+            .team-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Tim Kami</h1>
+            <p>Biodata Owner dan Kolaborator</p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Owner Card -->
+            <div class="team-card owner">
+                <div class="badge">👑 OWNER</div>
+                <div class="avatar">👨‍💼</div>
+                <h2>Athaillah Rizki Syandana</h2>
+                <p class="role">Owner & Founder</p>
+                <p class="bio">Pemimpin proyek dengan visi kreatif dan dedikasi tinggi dalam mengembangkan solusi inovatif untuk kebutuhan tim.</p>
+                <div class="social">
+                    <a href="#" title="Email">✉️</a>
+                    <a href="#" title="GitHub">🐙</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                </div>
+            </div>
+
+            <!-- Kolaborator 1 Card -->
+            <div class="team-card">
+                <div style="display: inline-block; background: #667eea; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; font-size: 14px;">🤝 KOLABORATOR 1</div>
+                <div class="avatar">👨‍💻</div>
+                <h2>Kevin Firdaus Putra P</h2>
+                <p class="role">Tim Kolaborator 1</p>
+                <p class="bio">Kontributor aktif dalam pengembangan proyek dengan fokus pada implementasi dan optimasi sistem yang efisien.</p>
+                <div class="social">
+                    <a href="#" title="Email">✉️</a>
+                    <a href="#" title="GitHub">🐙</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                </div>
+            </div>
+
+            <!-- Kolaborator 2 Card -->
+            <div class="team-card">
+                <div style="display: inline-block; background: #667eea; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; font-size: 14px;">🤝 KOLABORATOR 2</div>
+                <div class="avatar">👨‍💻</div>
+                <h2>Rana Aji Kusuma</h2>
+                <p class="role">Tim Kolaborator 2</p>
+                <p class="bio">Anggota tim yang berkontribusi dalam berbagai aspek proyek untuk mencapai target bersama dengan profesional.</p>
+                <div class="social">
+                    <a href="#" title="Email">✉️</a>
+                    <a href="#" title="GitHub">🐙</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Tim Proyek. Semua hak dilindungi.</p>
+        </footer>
+    </div>
+</body>
+</html>
